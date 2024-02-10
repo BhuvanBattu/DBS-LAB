@@ -1,0 +1,244 @@
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(100,'RAJESH','BTECH',9000000001,'rajesh@digisol.com','DEVELOPER',100000);
+
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(101,'RAVI','MTECH',9000000002,'ravi@digisol.com','PROJECT LEADER',200000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(102,'VIJAY','BTECH',9000000003,'vijay@digisol.com','PROJECT MANAGER',250000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(108,'AJAY','BTECH',9000000004,'ajay@digisol.com','TECHNICAL HEAD',150000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(110,'BHASKAR','MTECH',9000000005,'bhaskar@digisol.com','PROJECT DIRECTOR',275000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(106,'RAJ','MSC',9000000006,'raj@digisol.com','PROJECT LEADER',200000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(105,'MANISH','MCA',9000000007,'manish@digisol.com','DEVELOPER',100000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(107,'PRASAD','PHD',9000000008,'prasad@digisol.com','CEO',295000);
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(103,'RAKESH','MTECH',9000000009,'rakesh@digisol.com','DEVELOPER',100000);
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(118,'RAKESH','MTECH',9000000010,'rakesh1@digisol.com','DEVELOPER',100000);
+changed empcode from 109 to 118 and email form rakesh@digisol.com to rakesh1@digisol.com
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(109,'ROGER','MCA',9000000011,'roger@digisol.com','TECHNICAL HEAD',150000);
+changed qualification from MBA to MCA
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(112,'ANDY','PHD',9000000012,'andy@digisol.com','PROJECT MANAGER',250000);
+changed empcode from 110 to 112 and designation from  S.ENGINEER to PROJECT MANAGER
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(111,'RAJ','BTECH',9000000013,'raj1@digisol.com','DEVELOPER',100000);
+changed email from raj@digital.com to raj1@digisol.com
+
+insert into emp(empcode,name,qualification,phone,email,designation,salary) values(120,'BHUVAN','BTECH',9000000014,'bhuvan@digisol.com','PROJECT LEADER',250000);
+my entry
+
+update emp
+set reports_to=101
+where empcode=100;
+
+update emp
+set reports_to=102
+where empcode=101;
+
+update emp
+set reports_to=110
+where empcode=102;
+
+update emp
+set reports_to=102
+where empcode=108;
+
+update emp
+set reports_to=106
+where empcode=110;
+
+update emp
+set reports_to=110
+where empcode=106;
+
+update emp
+set reports_to=106
+where empcode=105;
+
+update emp
+set reports_to=NULL
+where empcode=107;
+
+update emp
+set reports_to=103
+where empcode=107;
+
+update emp
+set reports_to=103
+where empcode=118;
+
+update emp
+set reports_to=103
+where empcode=109;
+
+update emp
+set reports_to=103
+where empcode=112;
+
+update emp
+set reports_to=103
+where empcode=111;
+
+update emp
+set reports_to=103
+where empcode=120;
+
+insert into skill values('S1','Full stack');
+insert into skill values('S2','Python');
+insert into skill values('S3','Java');
+insert into skill values('S4','C++');
+insert into skill values('S6','Oracle');
+insert into skill values('S7','Android');
+insert into skill values('S8','AZURE');
+insert into skill values('S9','DOT NET');
+insert into skill values('S10','IOS');
+insert into skill values('S11','Web Development');
+my entry
+
+insert into client values('C1','ABC','+48-8748938901','aaa@abc.com');
+insert into client values('C2','LTS','+91-7838939701','bbb@Its.com');
+insert into client values('C3','RK','+44-6783893401','ccc@rk.com');
+insert into client values('C4','MMA','+31-7783909301','ddd@mma.com');
+insert into client values('C5','AKS','+81-6682290301','eee@aks.com');
+insert into client values('C6','GKS','+81-7562898201','fff@gks.com');
+changed +78 to +81 since phone format is violated
+
+insert into client values('C7','BB','+91-6483983901','ggg@bb.com');
+changed B&B to BB since & is a keyword to take input
+
+insert into client values('C8','ABT','+44-6755466701','hhh@abt.com');
+changed +97 to +44 since phone format is violated
+
+insert into client values('C9','XYZ','+31-8766976601','iii@xyz.com');
+insert into client values('C10','DUH','+48-7013976601','jjj@duh.com');
+my entry
+
+insert into emp_skill values(100,'S1',15);
+insert into emp_skill values(100,'S3',10);
+insert into emp_skill values(101,'S1',6);
+insert into emp_skill values(101,'S2',10);
+insert into emp_skill values(102,'S4',18);
+insert into emp_skill values(110,'S1',14);
+insert into emp_skill values(110,'S6',20);
+insert into emp_skill values(106,'S2',10);
+insert into emp_skill values(106,'S6',12);
+insert into emp_skill values(106,'S8',10);
+insert into emp_skill values(108,'S9',5);
+insert into emp_skill values(108,'S6',18);
+insert into emp_skill values(105,'S7',12);
+insert into emp_skill values(105,'S10',11);
+insert into emp_skill values(101,'S3',7);
+changed 101,S2 to 101,S3 because (empno,skillid) is primary key
+insert into emp_skill values(108,'S1',11);
+my entry
+
+insert into work_exp values(100,'P1',20,'C1','A');
+insert into work_exp values(100,'P3',15,'C3','A');
+insert into work_exp values(101,'P1',16,'C1','A');
+insert into work_exp values(102,'P2',18,'C2','B');
+insert into work_exp values(102,'P1',18,'C1','A');
+insert into work_exp values(108,'P2',12,'C2','C');
+insert into work_exp values(106,'P3',20,'C3','C');
+insert into work_exp values(106,'P4',10,'C4','C');
+insert into work_exp values(105,'P2',19,'C2','B');
+insert into work_exp values(110,'P4',12,'C4','B');
+insert into work_exp values(110,'P5',16,'C8','A');
+insert into work_exp values(105,'P5',5,'C5','C');
+changed rating from D to C since rating can have only A,B,C values
+
+insert into work_exp values(111,'P5',5,'C5','C');
+insert into work_exp values(108,'P6',11,'C7','A');
+my entry
+
+
+insert into prj_details values('P1','SPYDER',to_date('10-01-2020','dd-mm-yyyy'),'11-OCT-2022','11-NOV-2022',102,2000000,1990000);
+insert into prj_details values('P2','APOLLO',to_date('01-01-2019','dd-mm-yyyy'),'11-JUL-2021',to_date('30-12-2021','dd-mm-yyyy'),108,3000000,3600000);
+insert into prj_details values('P3','UNICORN',to_date('03-09-2021','dd-mm-yyyy'),'10-OCT-2023',to_date('25-12-2023','dd-mm-yyyy'),106,7500000,8000000);
+insert into prj_details values('P4','ZEUS',to_date('28-02-2020','dd-mm-yyyy'),'09-JUN-2021',to_date('10-01-2022','dd-mm-yyyy'),110,5500000,5000000);
+insert into prj_details values('P5','JUPITOR',to_date('07-08-2018','dd-mm-yyyy'),'04-FEB-2020','01-NOV-2020',110,9000000,9000000);
+insert into prj_details values('P6','MARS',to_date('21-2-2022','dd-mm-yyyy'),'04-AUG-2022','28-OCT-2022',110,8000000,8000000);
+changed enddate from 04-AUG-2020 to 04-AUG-2022 since end_date_greater_than_start_date
+
+insert into prj_details values('P8','SATURN',to_date('08-05-2019','dd-mm-yyyy'),'31-MAY-2021','02-JUN-2021',106,7000000,7000000);
+changed NULL to P8 since primary key cannot have null values
+
+insert into prj_details values('P7','SATURN',to_date('16-05-2020','dd-mm-yyyy'),'27-SEP-2022','02-OCT-2022',106,7500000,6500000);
+changed lead_by_empcode from 123 to 106 since 123 not present in empcode in emp
+
+insert into prj_details values('P9','JUNO',to_date('21-03-2021','dd-mm-yyyy'),'11-JUN-2023','11-JUL-2023',108,6000000,6500000);
+my entry
+
+
+
+insert into medical_policy values(100,'MED001',10000,to_date('10-12-2020','dd-mm-yyyy'));
+insert into medical_policy values(101,'MED003',12000,to_date('15-12-2020','dd-mm-yyyy'));
+insert into medical_policy values(100,'MED001',10000,to_date('10-01-2021','dd-mm-yyyy'));
+insert into medical_policy values(101,'MED003',12000,to_date('15-01-2021','dd-mm-yyyy'));
+insert into medical_policy values(103,'MED004',9000,to_date('21-01-2021','dd-mm-yyyy'));
+insert into medical_policy values(103,'MED004',10000,to_date('25-12-2021','dd-mm-yyyy'));
+my entry
+
+insert into family_dependents values(100,'AJITH','SON',12);
+insert into family_dependents values(100,'PRITHVI','DAUGHTER',9);
+insert into family_dependents values(101,'AARYA','DAUGHTER',17);
+insert into family_dependents values(101,'AKANKSH','SON',11);
+insert into family_dependents values(101,'ANITHA','SPOUSE',43);
+insert into family_dependents values(102,'ADI','SON',15);
+my entry
+
+insert into pay_check values(100,to_date('01-12-2020','dd-mm-yyyy'),2000,4000,10000,7000,2500,8000);
+insert into pay_check values(101,to_date('01-12-2020','dd-mm-yyyy'),3000,5000,9000,8000,5000,7000);
+insert into pay_check values(102,to_date('01-12-2020','dd-mm-yyyy'),3000,6000,9500,7500,3600,7000);
+insert into pay_check values(100,to_date('01-01-2021','dd-mm-yyyy'),3000,6500,8000,6500,450,4000);
+insert into pay_check values(101,to_date('01-01-2021','dd-mm-yyyy'),5000,5500,7200,5500,2100,4000);
+insert into pay_check values(102,to_date('01-01-2021','dd-mm-yyyy'),5000,4500,8000,5000,NULL,9000);
+insert into pay_check values(103,to_date('02-01-2021','dd-mm-yyyy'),7000,6300,7800,4500,900,3000);
+insert into pay_check values(103,to_date('02-01-2021','dd-mm-yyyy'),7000,6300,7800,4500,900,3000);
+insert into pay_check values(103,to_date('03-01-2021','dd-mm-yyyy'),9000,6350,7850,4550,1000,3500);
+my entry
+
+
+delete from emp
+where empcode=100;
+does not work since empcode is refered to by other column
+
+update emp
+set email='rajesh@digital.com'
+where empcode=100;
+does not work since email has constraint to check for domain as @digisol.com
+
+update work_exp
+set prjid='P9'
+where empcode=111;
+successfully updated since empcode 111 existst in the table
+
+delete from client
+where clientid='C1';
+successfully deleted since clientid c1 exists in the table
+
+delete from family_dependents
+where empno=100;
+The records having empno=100 have been successfully deleted
+Rollback works
+
+update emp
+set salary=salary+(salary*0.01)
+where designation='DEVELOPER';
+
+update emp
+set reports_to=106
+where empcode=108;
+
+update emp
+set reports_to=117
+where empcode=108;
+does not work since empcode 117 does not exist in emp
+
+
+
+
+
+
+
+
+
+
+
