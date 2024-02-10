@@ -1,0 +1,215 @@
+1)  select * from client;
+o/p
+CLI NAME       PHONE          EMAIL
+--- ---------- -------------- ------------------------------
+C2  LTS        +91-7838939701 bbb@Its.com
+C3  RK         +44-6783893401 ccc@rk.com
+C4  MMA        +31-7783909301 ddd@mma.com
+C5  AKS        +81-6682290301 eee@aks.com
+C6  GKS        +81-7562898201 fff@gks.com
+C7  BB         +91-6483983901 ggg@bb.com
+C8  ABT        +44-6755466701 hhh@abt.com
+C9  XYZ        +31-8766976601 iii@xyz.com
+C10 DUH        +48-7013976601 jjj@duh.com
+
+2)  select name,phone,email
+from emp
+where designation='DEVELOPER';
+o/p
+NAME            PHONE EMAIL
+---------- ---------- --------------------
+RAJESH     9000000001 rajesh@digisol.com
+MANISH     9000000007 manish@digisol.com
+RAKESH     9000000009 rakesh@digisol.com
+RAKESH     9000000010 rakesh1@digisol.com
+RAJ        9000000013 raj1@digisol.com
+
+
+3)  select name
+from emp
+where reports_to=106;
+o/p
+NAME
+----------
+AJAY
+BHASKAR
+MANISH
+
+4)  select name,email
+from emp
+where designation='TECHNICAL HEAD' and qualification='BTECH';
+o/p
+NAME       EMAIL
+---------- --------------------
+AJAY       ajay@digisol.com
+
+
+
+5)   1)select name
+from emp
+where salary>=100000 and salary<=200000;
+
+2)select name
+from emp
+where salary between 100000 and 200000;
+o/p
+NAME
+----------
+RAJESH
+RAVI
+AJAY
+RAJ
+MANISH
+RAKESH
+RAKESH
+ROGER
+RAJ
+
+
+7)  select skillname
+from skill,emp_skill
+where empno=101 and skill.skillid=emp_skill.skillid;
+are 4.6 and 4.7 the same??
+o/p
+SKILLNAME
+--------------------
+Full stack
+Python
+Java
+
+
+8)  select empcode
+from work_exp
+where (clientid='C1' or clientid='C2') and (rating='A' or rating='B');
+o/p
+   EMPCODE
+----------
+       102
+       105
+
+
+9)  select name
+from emp,work_exp
+where clientid='C2' and rating='B' and emp.empcode=work_exp.empcode;
+o/p
+NAME
+----------
+VIJAY
+MANISH
+
+10) select count(empno)
+from family_dependents,emp
+where name='RAVI' and empno=empcode;
+o/p
+COUNT(EMPNO)
+------------
+           3
+
+11)
+
+12)select name,relationship
+from emp left join family_dependents on empno=empcode;
+o/p
+NAME       RELATIONSHIP
+---------- ----------------
+RAJESH     SON
+RAJESH     DAUGHTER
+RAVI       DAUGHTER
+RAVI       SON
+RAVI       SPOUSE
+VIJAY      SON
+PRASAD
+AJAY
+ROGER
+BHASKAR
+MANISH
+
+NAME       RELATIONSHIP
+---------- ----------------
+RAKESH
+RAKESH
+BHUVAN
+ANDY
+RAJ
+RAJ
+
+
+13)
+
+14)
+
+15) select b.name,a.name,a.phone
+from emp a join emp b on a.empcode=b.reports_to;
+o/p
+NAME       NAME            PHONE
+---------- ---------- ----------
+RAJESH     RAVI       9000000002
+RAVI       VIJAY      9000000003
+VIJAY      BHASKAR    9000000005
+RAJ        BHASKAR    9000000005
+AJAY       RAJ        9000000006
+BHASKAR    RAJ        9000000006
+MANISH     RAJ        9000000006
+PRASAD     RAKESH     9000000009
+RAKESH     RAKESH     9000000009
+ROGER      RAKESH     9000000009
+ANDY       RAKESH     9000000009
+
+NAME       NAME            PHONE
+---------- ---------- ----------
+RAJ        RAKESH     9000000009
+BHUVAN     RAKESH     9000000009
+
+
+16)select *
+from prj_details
+order by actual_end_date desc;
+o/p
+PRJ PRJ_NAME   START_DAT END_DATE  ACTUAL_EN LEAD_BY_EMPCODE BUDGET_ALLOCATED
+--- ---------- --------- --------- --------- --------------- ----------------
+ACTUAL_BUDGET
+-------------
+P3  UNICORN    03-SEP-21 10-OCT-23 25-DEC-23             106          7500000
+      8000000
+
+P9  JUNO       21-MAR-21 11-JUN-23 11-JUL-23             108          6000000
+      6500000
+
+P1  SPYDER     10-JAN-20 11-OCT-22 11-NOV-22             102          2000000
+      1990000
+
+
+PRJ PRJ_NAME   START_DAT END_DATE  ACTUAL_EN LEAD_BY_EMPCODE BUDGET_ALLOCATED
+--- ---------- --------- --------- --------- --------------- ----------------
+ACTUAL_BUDGET
+-------------
+P6  MARS       21-FEB-22 04-AUG-22 28-OCT-22             110          8000000
+      8000000
+
+P7  ARTEMIS    16-MAY-20 27-SEP-22 02-OCT-22             106          7500000
+      6500000
+
+P4  ZEUS       28-FEB-20 09-JUN-21 10-JAN-22             110          5500000
+      5000000
+
+
+PRJ PRJ_NAME   START_DAT END_DATE  ACTUAL_EN LEAD_BY_EMPCODE BUDGET_ALLOCATED
+--- ---------- --------- --------- --------- --------------- ----------------
+ACTUAL_BUDGET
+-------------
+P2  APOLLO     01-JAN-19 11-JUL-21 30-DEC-21             108          3000000
+      3600000
+
+P8  SATURN     08-MAY-19 31-MAY-21 02-JUN-21             106          7000000
+      7000000
+
+P5  JUPITOR    07-AUG-18 04-FEB-20 01-NOV-20             110          9000000
+      9000000
+
+
+17)select * 
+from emp join emp_skill on empno=empcode;
+
+select name,skillname
+from (select *
+from emp_skill join skill on emp_skill.skillid=skill.skillid)as result join emp on empno=empcode;
